@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<body>
+<div class="container mt-4">
+
+    <a th:href= "@{/new}" class="btn btn-primary">Nuevo</a>
+    <br/>
+    <br/>
+    <br/>
+
+    <table class="table">
+        <thead>
+        </thead>
+        <tr>
+            <td>ID</td>
+            <td>NOMBRES</td>
+            <td>TELEFONES</td>
+            <td>ACCIONES</td>
+        </tr>
+        <tbody>
+        <tr th:each="persona:${personas}">
+            <td th:text="${persona.id}">${persona.id}</td>
+            <td th:text="${persona.name}"></td>
+            <td th:text="${persona.telefono}"></td>
+            <td>
+                <a class="btn btn-warning">Editar</a>
+                <a class="btn btn-danger">Eliminar</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
